@@ -25,10 +25,10 @@ INSERT INTO location (location_number, training_center_id) VALUES ('Кабине
 INSERT INTO location (location_number, training_center_id) VALUES ('Кабинет 102', 1);
 
 -- Insert data into equipment table
-INSERT INTO equipment (model_name, product_code, description, equipment_type_id, manufacturer, cost, warranty_start, warranty_end)
-VALUES ('MacBook Pro', 'ABC123', 'MacBook Pro 16 inch', 1, 'Apple', 1999.99, '2022-01-01', '2023-01-01');
-INSERT INTO equipment (model_name, product_code, description, equipment_type_id, manufacturer, cost, warranty_start, warranty_end)
-VALUES ('Epson Projector', 'DEF456', 'Epson PowerLite 1795F', 2, 'Epson', 799.99, '2022-01-01', '2024-01-01');
+INSERT INTO equipment (model_name, product_code, description, equipment_type_id, manufacturer)
+VALUES ('MacBook Pro', 'ABC123', 'MacBook Pro 16 inch', 1, 'Apple');
+INSERT INTO equipment (model_name, product_code, description, equipment_type_id, manufacturer)
+VALUES ('Epson Projector', 'DEF456', 'Epson PowerLite 1795F', 2, 'Epson');
 
 -- Insert data into equipment_status table
 INSERT INTO equipment_status (equipment_status_id, status) VALUES (1, 'На месте');
