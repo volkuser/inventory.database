@@ -37,12 +37,7 @@ CREATE TABLE "equipment" (
   product_code varchar(50),
   description text,
   equipment_type_id integer REFERENCES "equipment_type"(equipment_type_id),
-  manufacturer varchar(50),
-  cost numeric(10, 2),
-  warranty_start date,
-  warranty_end date,
-  CHECK (cost >= 0),
-  CHECK (warranty_start <= warranty_end)
+  manufacturer varchar(50)
 );
 
 CREATE TABLE "equipment_status" (
@@ -53,11 +48,11 @@ CREATE TABLE "equipment_status" (
 
 CREATE TABLE "equipment_unit" (
   equipment_unit_id serial PRIMARY KEY,
-  equipment_id integer REFERENCES "equipment"(equipment_id),
+  equipment_id integer NOT NULL REFERENCES "equipment"(equipment_id),
   serial_number varchar(50),
   purchase_date date,
-  location_id integer REFERENCES "location"(location_id),
-  current_status integer REFERENCES "equipment_status"(equipment_status_id),
+  location_id integer NOT NULL REFERENCES "location"(location_id),
+  current_status integer NOT NULL REFERENCES "equipment_status"(equipment_status_id),
   responsible_person_id integer REFERENCES "employee"(employee_id),
   guid_code uuid DEFAULT uuid_generate_v4() NOT NULL
 );
