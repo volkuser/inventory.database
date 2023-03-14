@@ -25,18 +25,13 @@ INSERT INTO location (location_number, training_center_id) VALUES ('Кабине
 INSERT INTO location (location_number, training_center_id) VALUES ('Кабинет 102', 1);
 
 -- Insert data into equipment table
-INSERT INTO equipment (model_name, product_code, description, equipment_type_id, manufacturer)
-VALUES ('MacBook Pro', 'ABC123', 'MacBook Pro 16 inch', 1, 'Apple');
-INSERT INTO equipment (model_name, product_code, description, equipment_type_id, manufacturer)
-VALUES ('Epson Projector', 'DEF456', 'Epson PowerLite 1795F', 2, 'Epson');
-
--- Insert data into equipment_status table
-INSERT INTO equipment_status (equipment_status_id, status) VALUES (1, 'На месте');
-INSERT INTO equipment_status (equipment_status_id, status) VALUES (2, 'Нет на месте');
-INSERT INTO equipment_status (equipment_status_id, status) VALUES (3, 'В другом месте');
+INSERT INTO equipment (model_name, equipment_type_id, manufacturer)
+VALUES ('MacBook Pro', 1, 'Apple');
+INSERT INTO equipment (model_name, equipment_type_id, manufacturer)
+VALUES ('Epson Projector', 2, 'Epson');
 
 -- Insert data into equipment_unit table
-INSERT INTO equipment_unit (equipment_id, serial_number, purchase_date, location_id, current_status, responsible_person_id)
-VALUES (1, '123456', '2022-01-01', 1, 1, 1);
-INSERT INTO equipment_unit (equipment_id, serial_number, purchase_date, location_id, current_status, responsible_person_id)
-VALUES (2, '654321', '2022-01-01', 2, 2, 2);
+INSERT INTO equipment_unit (equipment_id, location_id, on_state, responsible_person_id)
+VALUES (1, 1, true, 1);
+INSERT INTO equipment_unit (equipment_id, location_id, on_state, responsible_person_id)
+VALUES (2, 2, false, 2);

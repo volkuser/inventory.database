@@ -34,25 +34,15 @@ CREATE TABLE "location" (
 CREATE TABLE "equipment" (
   equipment_id serial PRIMARY KEY,
   model_name varchar(100) NOT NULL,
-  product_code varchar(50),
-  description text,
-  equipment_type_id integer REFERENCES "equipment_type"(equipment_type_id),
-  manufacturer varchar(50)
-);
-
-CREATE TABLE "equipment_status" (
-  equipment_status_id serial PRIMARY KEY,
-  status varchar(50) NOT NULL,
-  CHECK (status IN ('На месте', 'Нет на месте', 'В другом месте'))
+  equipment_type_id integer NOT NULL REFERENCES "equipment_type"(equipment_type_id),
+  manufacturer varchar(50) --TODO add countries choice
 );
 
 CREATE TABLE "equipment_unit" (
   equipment_unit_id serial PRIMARY KEY,
   equipment_id integer NOT NULL REFERENCES "equipment"(equipment_id),
-  serial_number varchar(50),
-  purchase_date date,
   location_id integer NOT NULL REFERENCES "location"(location_id),
-  current_status integer NOT NULL REFERENCES "equipment_status"(equipment_status_id),
+  on_state boolean DEFAULT FALSE,
   responsible_person_id integer REFERENCES "employee"(employee_id),
   guid_code uuid DEFAULT uuid_generate_v4() NOT NULL
 );
