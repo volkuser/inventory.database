@@ -40,6 +40,7 @@ CREATE TABLE "equipment" (
 
 CREATE TABLE "equipment_unit" (
   equipment_unit_id serial PRIMARY KEY,
+  inventory_number varchar(50) UNIQUE,
   equipment_id integer NOT NULL REFERENCES "equipment"(equipment_id),
   location_id integer NOT NULL REFERENCES "location"(location_id),
   on_state boolean DEFAULT FALSE,

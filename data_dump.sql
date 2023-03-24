@@ -31,7 +31,7 @@ INSERT INTO equipment (model_name, equipment_type_id, manufacturer)
 VALUES ('Epson Projector', 2, 'Epson');
 
 -- Insert data into equipment_unit table
-INSERT INTO equipment_unit (equipment_id, location_id, on_state, responsible_person_id)
-VALUES (1, 1, true, 1);
-INSERT INTO equipment_unit (equipment_id, location_id, on_state, responsible_person_id)
-VALUES (2, 2, false, 2);
+INSERT INTO equipment_unit (inventory_number, equipment_id, location_id, on_state, responsible_person_id)
+VALUES ('123456789', 1, 1, true, 1);
+INSERT INTO equipment_unit (inventory_number, equipment_id, location_id, on_state, responsible_person_id)
+VALUES ('987654321', 2, 2, false, 2);
