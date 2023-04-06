@@ -44,6 +44,5 @@ CREATE TABLE "equipment_unit" (
   equipment_id integer NOT NULL REFERENCES "equipment"(equipment_id),
   location_id integer NOT NULL REFERENCES "location"(location_id),
   on_state boolean DEFAULT FALSE,
-  responsible_person_id integer REFERENCES "employee"(employee_id),
-  guid_code uuid DEFAULT uuid_generate_v4() NOT NULL
+  guid_code uuid DEFAULT uuid_generate_v4()
 );
