@@ -3,27 +3,14 @@ INSERT INTO equipment_type (equipment_type_name) VALUES ('Персональны
 INSERT INTO equipment_type (equipment_type_name) VALUES ('Проектор');
 INSERT INTO equipment_type (equipment_type_name) VALUES ('Принтер');
 
--- Insert data into user table
-INSERT INTO "user" (username, password) VALUES ('иванов.иван', '1123');
-INSERT INTO "user" (username, password) VALUES ('петров.петр', '2123');
-INSERT INTO "user" (username, password) VALUES ('артемов.артем', '3123');
-
--- Insert data into employee table
-INSERT INTO employee (first_name, last_name, patronymic, view_position, role, user_id)
-VALUES ('Иван', 'Иванов', 'Иввнович', 'Преподаватель', 'Responsible person', 1);
-INSERT INTO employee (first_name, last_name, patronymic, view_position, role, user_id)
-VALUES ('Петр', 'Петров', 'Петрович', 'Преподаватель', 'Administrator', 2);
-INSERT INTO employee (first_name, last_name, patronymic, view_position, role, user_id)
-VALUES ('Артем', 'Артемов', 'Артемович', 'Преподаватель', 'Commission member', 3);
-
 -- Insert data into training_center table
 INSERT INTO training_center (center_address) VALUES ('Нежинская улица, 7, Москва, 119501');
 INSERT INTO training_center (center_address) VALUES ('Нахимовский просп., 21, Москва, 117638');
 
 -- Insert data into location table
-INSERT INTO location (location_number, training_center_id) VALUES ('Кабинет 248', 1);
-INSERT INTO location (location_number, training_center_id) VALUES ('Кабинет 102', 1);
-INSERT INTO location (location_number, training_center_id) VALUES ('Кабинет 102', 2);
+INSERT INTO location (location_number, training_center_id) VALUES ('248', 1);
+INSERT INTO location (location_number, training_center_id) VALUES ('102', 1);
+INSERT INTO location (location_number, training_center_id) VALUES ('102', 2);
 
 -- Insert data into equipment table
 INSERT INTO equipment (model_name, equipment_type_id, manufacturer)
